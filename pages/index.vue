@@ -1,18 +1,40 @@
 <template>
   <div class="container">
-    <h1>WTF</h1>
-    <button @click="test">YO</button>
+    <main>
+      <blog-excerpt
+        v-for="(excerpt, index) in excerpts"
+        :key="index"
+        :excerpt="excerpt"
+      />
+    </main>
   </div>
 </template>
 
 <script>
+import BlogExcerpt from '../components/BlogExcerpt'
 export default {
-  components: {},
-  methods: {
-    test() {
-      alert('hello')
+  components: {
+    BlogExcerpt
+  },
+  data() {
+    return {
+      excerpts: [
+        {
+          title: 'this is a test',
+          date: 'april 12, 2020',
+          description:
+            'lorem ipsum, dolor sit amet consectetur adipisicing elit. praesentium error dolor velit, ea atque cumque.'
+        },
+        {
+          title: 'this is a test',
+          date: 'april 12, 2020',
+          description:
+            'lorem ipsum, dolor sit amet consectetur adipisicing elit. praesentium error dolor velit, ea atque cumque.'
+        }
+      ]
     }
-  }
+  },
+  methods: {}
 }
 </script>
 
@@ -46,5 +68,11 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 </style>
