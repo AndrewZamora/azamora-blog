@@ -1,7 +1,9 @@
 <template>
   <article>
     <header>
-      <h3>{{ excerpt.title }}</h3>
+      <h3>
+        <nuxt-link to="`blog/${excerpt.slug}`">{{ excerpt.title }}</nuxt-link>
+      </h3>
       <p>
         <small>{{ excerpt.date }}</small>
       </p>

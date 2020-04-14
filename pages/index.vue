@@ -1,5 +1,16 @@
 <template>
   <div class="container">
+    <header>
+      <h1>
+        <nuxt-link to="/home">Some Title</nuxt-link>
+      </h1>
+    </header>
+    <aside class="home-aside">
+      <p>
+        I'm Andrew Zamora a Web Developer from California. This is my blog where
+        I write about programming.
+      </p>
+    </aside>
     <main>
       <blog-excerpt
         v-for="(excerpt, index) in excerpts"
@@ -39,13 +50,29 @@ export default {
 </script>
 
 <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.home-aside {
+  max-width: 50rem;
+  margin: 0 auto;
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 .title {
@@ -68,11 +95,5 @@ export default {
 
 .links {
   padding-top: 15px;
-}
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 </style>
